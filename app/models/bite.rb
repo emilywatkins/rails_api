@@ -1,4 +1,4 @@
 class Bite < ApplicationRecord
 
-  scope :search, -> (species) { where("species like ?", "%#{species}%")}
+  scope :search, -> (species) { where("species ILIKE ?", "%#{species}%")}
 end
