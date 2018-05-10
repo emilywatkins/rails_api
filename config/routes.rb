@@ -5,7 +5,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :bites
+  namespace :api do
+    namespace :v2 do
+      resources :bites
+    end
+  end
+
 
   post 'authenticate', to: 'authentication#authenticate'
 end
